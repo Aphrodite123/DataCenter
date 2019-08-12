@@ -10,6 +10,9 @@ import time
 import requests
 from xlwt import Workbook
 
+reload(sys)
+sys.setdefaultencoding('utf8')
+
 size = 44
 page_num = 10
 
