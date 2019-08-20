@@ -8,10 +8,10 @@ import csv
 import json
 import time
 import requests
+import importlib
 from xlwt import Workbook
 
-reload(sys)
-sys.setdefaultencoding('utf8')
+importlib.reload(sys)
 
 size = 44
 page_num = 10
@@ -50,7 +50,6 @@ def main(word):
 		html = resp.text
 		content = re.findall(r'g_page_config = (.*?) g_srp_loadCss', html, re.S)[0].strip()[:-1]	
 		content = json.loads(content)
-		print(content)
 		data_list = content['mods']['itemlist']['data']['auctions']
 		for item in data_list:
 			title = parse_title(item['title'])
