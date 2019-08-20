@@ -67,7 +67,7 @@ def main(word):
 			sheet.write(k, i, label=j)
 
 	current = time.strftime("%Y-%m-%d", time.localtime(time.time()))
-	work_book.save('result/{}_{}.xls'.format(word, current))
+	work_book.save('{}_{}.xls'.format(word, current))
 
 	# with open("{}.csv".format(word), 'wb') as fr:
 	# 	fw = csv.writer(fr)
