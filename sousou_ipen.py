@@ -35,7 +35,7 @@ def write_file(content):
 def main(word):
 	data = [["名称", "价格", "销量", "链接"]]
 	for i in range(page_num):
-		url = 'https://s.taobao.com/search?q=%E6%97%A9%E6%95%99%E6%9C%BA%E5%99%A8%E4%BA%BA&imgfile=&commend=all&ssid=s5-e&search_type=item&sourceId=tb.index&spm=a21bo.2017.201856-taobao-item.1&ie=utf8&initiative_id=tbindexz_20170306&cps=yes&ppath=20000%3A12608401'
+		url = 'https://s.taobao.com/search?q=%E7%82%B9%E8%AF%BB%E7%AC%94&imgfile=&commend=all&ssid=s5-e&search_type=item&sourceId=tb.index&spm=a21bo.2017.201856-taobao-item.1&ie=utf8&initiative_id=tbindexz_20170306'
 		headers = {
 			"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3",
 			"accept-encoding": "gzip, deflate, br",
@@ -67,7 +67,7 @@ def main(word):
 			sheet.write(k, i, label=j)
 
 	current = time.strftime("%Y-%m-%d", time.localtime(time.time()))
-	work_book.save('{}_{}.xls'.format(word, current))
+	work_book.save('result/{}_{}.xls'.format(word, current))
 
 	# with open("{}.csv".format(word), 'wb') as fr:
 	# 	fw = csv.writer(fr)
