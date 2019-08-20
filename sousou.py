@@ -9,8 +9,9 @@ import json
 import time
 import requests
 from xlwt import Workbook
-import imp
-imp.reload(sys)
+import sys
+reload(sys)
+sys.setdefaultencoding("utf-8")
 
 size = 44
 page_num = 10
