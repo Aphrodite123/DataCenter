@@ -8,10 +8,10 @@ import csv
 import json
 import time
 import requests
-import importlib
+import imp
 from xlwt import Workbook
 
-importlib.reload(sys)
+imp.reload(sys)
 
 size = 44
 page_num = 10
