@@ -20,6 +20,7 @@ def parse_title(title):
 
 
 def parse_count(count):
+	# coding: utf-8
 	c = 10000 if "万" in count else 1
 	count = re.findall(r"\d+\.?\d*", count)
 	return float(count[0])*c
