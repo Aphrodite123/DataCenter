@@ -27,7 +27,6 @@ def parse_count(count):
 def write_file(content):
     f = open("text.txt",'wb')
     f.write(content) 
-    f.close()
 
 def main(word):
 	data = [["名称", "价格", "销量", "链接"]]
