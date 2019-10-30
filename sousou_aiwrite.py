@@ -9,9 +9,12 @@ import json
 import time
 import requests
 from xlwt import Workbook
-import sys
 reload(sys)
 sys.setdefaultencoding("utf-8")
+
+#Python版本>=3.4
+#import importlib
+#importlib.reload(sys)
 
 size = 44
 page_num = 10
@@ -41,13 +44,14 @@ def main(word):
 			"accept-encoding": "gzip, deflate, br",
 			"accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
 			"cache-control": "max-age=0",
-			"cookie": "cna=7JKiEpFHzlMCAd3iIOrTYAwh; t=1e17a93117f164103cc2ac78ef3512b2; tg=0; x=e%3D1%26p%3D*%26s%3D0%26c%3D0%26f%3D0%26g%3D0%26t%3D0%26__ll%3D-1%26_ato%3D0; enc=%2B%2FPNvT4UOUk0ZH95RVO%2BhpnLGpENKcWFl36bVhKrsEPMiqVv%2Ff5JT0WS4sZoOwv9h9GufpldD7eX3oVR9e10cw%3D%3D; miid=7882758021902184618; hng=CN%7Czh-CN%7CCNY%7C156; tracknick=%5Cu68A6%5Cu5FC6%5Cu7F8E%5Cu59EC; thw=cn; _uab_collina=156496885215409652475149; UM_distinctid=16c8876887272e-01f2bccbbcc11c-4f4c0a2e-1fa400-16c887688738fe; _cc_=U%2BGCWk%2F7og%3D%3D; v=0; cookie2=1eb4b2ba76a3586a7b81120e0c33232a; _tb_token_=6b613b73b178; unb=899977127; uc3=id2=W8CE0v8U2F%2FX&nk2=oHTbP%2Flo5ZE%3D&lg2=VFC%2FuZ9ayeYq2g%3D%3D&vt3=F8dByua36w8%2FcYInHKI%3D; csg=539d85e9; lgc=%5Cu68A6%5Cu5FC6%5Cu7F8E%5Cu59EC; cookie17=W8CE0v8U2F%2FX; dnk=%5Cu68A6%5Cu5FC6%5Cu7F8E%5Cu59EC; skt=6320dcd93e7a5a49; existShop=MTU3MjQxMzY4Mg%3D%3D; uc4=id4=0%40WeNe2ZWhRAYPgRibTfzu8sGHvZA%3D&nk4=0%40oib6nB2SPAJoGEa33H5vhPy62g%3D%3D; _l_g_=Ug%3D%3D; sg=%E5%A7%AC71; _nk_=%5Cu68A6%5Cu5FC6%5Cu7F8E%5Cu59EC; cookie1=U%2BGWngd%2FhfSbx9oeCKJj37j1xapM4es%2BPmPCtgIAF3k%3D; mt=ci=62_1; uc1=cookie16=U%2BGCWk%2F74Mx5tgzv3dWpnhjPaQ%3D%3D&cookie21=W5iHLLyFfXVRDP8mxoRA8A%3D%3D&cookie15=Vq8l%2BKCLz3%2F65A%3D%3D&existShop=false&pas=0&cookie14=UoTbnxzN%2Brlm4Q%3D%3D&tag=8&lng=zh_CN; x5sec=7b227365617263686170703b32223a226139636237356438626264666232386137376638396262343561623863366438434a7644354f3046454a7250697266377834436a44426f4d4f446b354f5463334d5449334f7a4934227d; JSESSIONID=C320E0E1A7993DF2A47809BE38579227; isg=BBkZNHOFoDFG1nykrQOFtM-qKAUzDg6q0XUUEjvOlcC_QjnUg_YdKIdQQEaRYaWQ; l=dBPNlkLlq3EQX7syBOCanurza77OSIRYYuPzaNbMi_5ZJ6TsrgQOkN6thF96VjWftkTB4Rb-zx99-etkZXYdKP--g3fz9Mc.",
+			"cookie": "cna=7JKiEpFHzlMCAd3iIOrTYAwh; t=1e17a93117f164103cc2ac78ef3512b2; tg=0; x=e%3D1%26p%3D*%26s%3D0%26c%3D0%26f%3D0%26g%3D0%26t%3D0%26__ll%3D-1%26_ato%3D0; enc=%2B%2FPNvT4UOUk0ZH95RVO%2BhpnLGpENKcWFl36bVhKrsEPMiqVv%2Ff5JT0WS4sZoOwv9h9GufpldD7eX3oVR9e10cw%3D%3D; miid=7882758021902184618; hng=CN%7Czh-CN%7CCNY%7C156; tracknick=%5Cu68A6%5Cu5FC6%5Cu7F8E%5Cu59EC; thw=cn; _uab_collina=156496885215409652475149; UM_distinctid=16c8876887272e-01f2bccbbcc11c-4f4c0a2e-1fa400-16c887688738fe; lgc=%5Cu68A6%5Cu5FC6%5Cu7F8E%5Cu59EC; mt=ci=62_1; uc3=vt3=F8dByua36w2clPIlKf0%3D&nk2=oHTbP%2Flo5ZE%3D&id2=W8CE0v8U2F%2FX&lg2=URm48syIIVrSKA%3D%3D; uc4=id4=0%40WeNe2ZWhRAYPgRibTfzu8sc9fgA%3D&nk4=0%40oib6nB2SPAJoGEa33H5vgj%2FfwQ%3D%3D; _cc_=UIHiLt3xSw%3D%3D; uc1=cookie14=UoTbnxzN%2F9V%2BBw%3D%3D; v=0; cookie2=1f9a80b02346c545a53183900d464c54; _tb_token_=b461b977be6e; x5sec=7b227365617263686170703b32223a223531636131643137383064383966323965383336353962393235326235613736434b5067354f3046454e5444734b336a6e39447341526f4e4f446b354f5463334d5449334f7a45794f413d3d227d; JSESSIONID=0E6426202A4B37A682E187E3723F856A; isg=BFZW_ZycF5gsjyM99lLybeSrpwyYX5nDytTra8C_QjnUg_YdKIfqQbxxH1_KMJJJ; l=dBPNlkLlq3EQXIRbBOCanurza77OSIRYYuPzaNbMi_5wP6Ts6fbOkN11fF96VjWftrLB4Rb-zx99-etkZCJ-RQK-g3fz4Dc.",
 			"referer": "https://www.taobao.com/",
 			"upgrade-insecure-requests": "1",
 			"user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36",
 		}
 		resp = requests.get(url, headers=headers)
 		html = resp.text
+		#print(html);
 		content = re.findall(r'g_page_config = (.*?) g_srp_loadCss', html, re.S)[0].strip()[:-1]	
 		content = json.loads(content)
 		data_list = content['mods']['itemlist']['data']['auctions']

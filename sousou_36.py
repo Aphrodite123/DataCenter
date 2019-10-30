@@ -51,7 +51,7 @@ def main(word):
 		}
 		resp = requests.get(url, headers=headers)
 		html = resp.text
-		print(html);
+		#print(html);
 		content = re.findall(r'g_page_config = (.*?) g_srp_loadCss', html, re.S)[0].strip()[:-1]	
 		content = json.loads(content)
 		data_list = content['mods']['itemlist']['data']['auctions']
