@@ -9,10 +9,12 @@ import json
 import time
 import requests
 from xlwt import Workbook
-#reload(sys)
-#sys.setdefaultencoding("utf-8")
-import importlib
-importlib.reload(sys)
+reload(sys)
+sys.setdefaultencoding("utf-8")
+
+#Python版本>=3.4
+#import importlib
+#importlib.reload(sys)
 
 size = 44
 page_num = 10
