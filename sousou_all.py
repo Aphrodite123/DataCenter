@@ -91,7 +91,7 @@ def main(item):
 	# 	fw.writerows(data)
 
 if __name__ == '__main__':
-	config = read_file('./DataCenter/config.txt')
+	config = read_file('config.txt')
 	if not config:
 		print('读取配置文件失败')
 		raise RuntimeError
