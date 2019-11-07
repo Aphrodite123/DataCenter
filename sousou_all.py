@@ -34,7 +34,7 @@ def parse_count(count):
 
 def read_file(path):
 	# 第三种方法
-	f = open(path, "r", encoding='UTF-8')
+	f = open(path, "r")
 	data = f.readlines()
 	f.close()
 	return json.dumps(data)
