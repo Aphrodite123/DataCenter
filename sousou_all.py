@@ -10,12 +10,12 @@ import time
 import requests
 import ast
 from xlwt import Workbook
-reload(sys)
-sys.setdefaultencoding("utf-8")
+#reload(sys)
+#sys.setdefaultencoding("utf-8")
 
 #Python版本>=3.4
-#import importlib
-#importlib.reload(sys)
+import importlib
+importlib.reload(sys)
 
 size = 44
 page_num = 10
@@ -34,7 +34,7 @@ def parse_count(count):
 
 def read_file(path):
 	# 第三种方法
-	f = open(path, "r")
+	f = open(path, "r",encoding='UTF-8')
 	data = f.readlines()
 	f.close()
 	return json.dumps(data)
