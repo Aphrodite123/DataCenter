@@ -60,21 +60,24 @@ def main(item):
 			"user-agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1",
 		}
 		headers['cookie'] = cookie
-		resp = requests.get(url, headers=headers)
-		html = resp.text
-		content = re.findall(r'g_page_config = (.*?) g_srp_loadCss', html, re.S)
-		if not content:
-			print('获取数据失败')
-			raise RuntimeError
-		content = json.loads(content[0].strip()[:-1])
-		data_list = content['mods']['itemlist']['data']['auctions']
-		for item in data_list:
-			title = parse_title(item['title'])
-			price = item['view_price']
-			count = parse_count(item['view_sales'])
-			detailUrl = item['detail_url']
+		try:
+			resp = requests.get(url, headers=headers)
+			html = resp.text
+			content = re.findall(r'g_page_config = (.*?) g_srp_loadCss', html, re.S)
+			content = json.loads(content[0].strip()[:-1])
+			data_list = content['mods']['itemlist']['data']['auctions']
+			for item in data_list:
+				title = parse_title(item['title'])
+				price = item['view_price']
+				count = parse_count(item['view_sales'])
+				detailUrl = item['detail_url']
 
-			data.append([title, price, count, detailUrl])
+				data.append([title, price, count, detailUrl])
+		except Exception as e:
+			str = "(%s)获取数据异常，错误为(%s)" %(name,e)
+			print(str)
+			pass
+		continue
 
 	work_book = Workbook(encoding="utf-8")
 	sheet = work_book.add_sheet(name)
@@ -84,17 +87,20 @@ def main(item):
 			sheet.write(k, i, label=j)
 
 	current = time.strftime("%Y-%m-%d", time.localtime(time.time()))
-	work_book.save('{}_{}.xls'.format(name, current))
+	filePath = "./data/"+'{}_{}.xls'.format(name, current)
+	work_book.save(filePath)
 
 	# with open("{}.csv".format(word), 'wb') as fr:
 	# 	fw = csv.writer(fr)
 	# 	fw.writerows(data)
 
 if __name__ == '__main__':
-	config = read_file('config.txt')
-	if not config:
-		print('读取配置文件失败')
-		raise RuntimeError
+	try:
+		config = read_file('config.txt')
+	except Exception as e:
+		str = "读取文件异常，错误为(%s)" % (e)
+		print(str)
+		sys.exit()
 	jsonValue = json.loads(config)
 	for item in jsonValue:
 		itemDict = ast.literal_eval(item)
