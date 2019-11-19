@@ -25,7 +25,6 @@ def parse_title(title):
 	title = title.replace("</span>", "")
 	return title
 
-
 def parse_count(count):
 	# coding: utf-8
 	c = 10000 if "万" in count else 1
@@ -44,7 +43,7 @@ def write_file(content):
     f.write(content) 
 
 def main(item):
-	data = [["名称", "价格", "销量", "链接"]]
+	data = [["商品ID","名称", "价格", "销量", "链接","店铺"]]
 	name = item['name']
 	url = item['url']
 	cookie = item['cookie']
@@ -66,13 +65,18 @@ def main(item):
 			content = re.findall(r'g_page_config = (.*?) g_srp_loadCss', html, re.S)
 			content = json.loads(content[0].strip()[:-1])
 			data_list = content['mods']['itemlist']['data']['auctions']
-			for item in data_list:
+			if data_list:
+				copyData = sorted(set(data_list),key=data_list.index)
+
+			for item in copyData:
+				nid = item['nid']
 				title = parse_title(item['title'])
 				price = item['view_price']
 				count = parse_count(item['view_sales'])
 				detailUrl = item['detail_url']
+				store = item['nick']
 
-				data.append([title, price, count, detailUrl])
+				data.append([nid,title, price, count, detailUrl,store])
 		except Exception as e:
 			str = "(%s)获取数据异常，错误为(%s)" %(name,e)
 			print(str)
