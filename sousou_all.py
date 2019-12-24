@@ -10,15 +10,15 @@ import time
 import requests
 import ast
 from xlwt import Workbook
-reload(sys)
-sys.setdefaultencoding("utf-8")
+#reload(sys)
+#sys.setdefaultencoding("utf-8")
 
 #Python版本>=3.4
-#import importlib
-#importlib.reload(sys)
+import importlib
+importlib.reload(sys)
 
 size = 44
-page_num = 10
+page_num = 30
 
 def parse_title(title):
 	title = title.replace("<span class=H>", "")
@@ -33,7 +33,7 @@ def parse_count(count):
 
 def read_file(path):
 	# 第三种方法
-	f = open(path, "r")
+	f = open(path, "r",encoding='UTF-8')
 	data = f.readlines()
 	f.close()
 	return json.dumps(data)
@@ -43,11 +43,12 @@ def write_file(content):
     f.write(content) 
 
 def main(item):
+	request_args = {}
 	data = [["商品ID","名称", "价格", "销量", "链接","店铺"]]
 	name = item['name']
 	url = item['url']
 	cookie = item['cookie']
-	for i in range(page_num):
+	for i in range(1,page_num):
 		headers = {
 			"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3",
 			"accept-encoding": "gzip, deflate, br",
@@ -58,17 +59,19 @@ def main(item):
 			"upgrade-insecure-requests": "1",
 			"user-agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1",
 		}
+		#实现分页
+		if i>0:
+			request_args['s']=size*(i-1)
+
 		headers['cookie'] = cookie
 		try:
-			resp = requests.get(url, headers=headers)
+			resp = requests.get(url, params=request_args, headers=headers)
 			html = resp.text
 			content = re.findall(r'g_page_config = (.*?) g_srp_loadCss', html, re.S)
 			content = json.loads(content[0].strip()[:-1])
 			data_list = content['mods']['itemlist']['data']['auctions']
-			if data_list:
-				copyData = sorted(set(data_list),key=data_list.index)
 
-			for item in copyData:
+			for item in data_list:
 				nid = item['nid']
 				title = parse_title(item['title'])
 				price = item['view_price']
