@@ -17,8 +17,8 @@ from xlwt import Workbook
 import importlib
 importlib.reload(sys)
 
-size = 44
-page_num = 30
+size = 60
+page_num = 2
 
 def parse_title(title):
 	title = title.replace("<span class=H>", "")
@@ -55,9 +55,9 @@ def main(item):
 			"accept-language": "zh-CN,zh;q=0.9",
 			"cache-control": "max-age=0",
 			"cookie": "",
-			"referer": "https://www.taobao.com/",
+			"referer": "https://list.tmall.com",
 			"upgrade-insecure-requests": "1",
-			"user-agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1",
+			"user-agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Mobile Safari/537.36",
 		}
 		#实现分页
 		if i>0:
@@ -67,6 +67,7 @@ def main(item):
 		try:
 			resp = requests.get(url, params=request_args, headers=headers)
 			html = resp.text
+			print(html)
 			content = re.findall(r'g_page_config = (.*?) g_srp_loadCss', html, re.S)
 			content = json.loads(content[0].strip()[:-1])
 			data_list = content['mods']['itemlist']['data']['auctions']
