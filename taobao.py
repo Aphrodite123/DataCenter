@@ -2,6 +2,8 @@
 # Create @ 2019-06-21 16:51:51
 # Author @ 819070918@qq.com
 
+# 爬取淘宝网页数据，数据类型为json
+
 import re
 import sys
 import csv
@@ -10,9 +12,6 @@ import time
 import requests
 import ast
 from xlwt import Workbook
-# 导入bs4库
-from bs4 import BeautifulSoup
-
 # reload(sys)
 # sys.setdefaultencoding("utf-8")
 
@@ -21,7 +20,7 @@ import importlib
 
 importlib.reload(sys)
 
-size = 5
+size = 60
 page_num = 2
 
 
@@ -76,10 +75,6 @@ def main(item):
         try:
             resp = requests.get(url, params=request_args, headers=headers)
             html = resp.text
-
-            soup = BeautifulSoup(html, 'html.parser')
-            print(soup.select('body > div.page > mallPage'))
-
             content = re.findall(r'g_page_config = (.*?) g_srp_loadCss', html, re.S)
             content = json.loads(content[0].strip()[:-1])
             data_list = content['mods']['itemlist']['data']['auctions']
