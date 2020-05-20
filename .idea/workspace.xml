@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2884000b-0f21-43d6-8249-e542d41fb409" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search_product.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/query_comments.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.txt" beforeDir="false" afterPath="$PROJECT_DIR$/config.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/故事机2_2020-04-17.xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/畅销童书_2020-04-17.xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sousou_all.py" beforeDir="false" afterPath="$PROJECT_DIR$/taobao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmall.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmall_goods.py" beforeDir="false" afterPath="$PROJECT_DIR$/tmall.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,19 +16,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tmall.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="1675">
+              <caret line="150" column="23" selection-start-line="150" selection-start-column="16" selection-end-line="150" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/taobao.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="502">
+              <caret line="89" column="73" selection-start-line="89" selection-start-column="73" selection-end-line="89" selection-end-column="73" />
               <folding>
-                <element signature="e#83#92#0" expanded="true" />
+                <element signature="e#105#114#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/query_comments.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="76" column="22" selection-start-line="76" selection-start-column="22" selection-end-line="76" selection-end-column="22" />
+              <folding>
+                <element signature="e#9#24#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -58,6 +79,8 @@
       <find>97笔</find>
       <find>599771813330&amp;</find>
       <find>599771813330</find>
+      <find>嘟***方</find>
+      <find>Get_Url</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -79,14 +102,18 @@
         <option value="$PROJECT_DIR$/tmall_goods.py" />
         <option value="$PROJECT_DIR$/taobao.py" />
         <option value="$PROJECT_DIR$/tmall.py" />
+        <option value="$PROJECT_DIR$/query_comments.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="312" />
-    <option name="y" value="160" />
+    <option name="x" value="35" />
+    <option name="y" value="201" />
     <option name="width" value="1400" />
     <option name="height" value="993" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -189,18 +216,19 @@
       <workItem from="1584412580709" duration="818000" />
       <workItem from="1587107409740" duration="10244000" />
       <workItem from="1587343595569" duration="19507000" />
-      <workItem from="1587368141469" duration="22202000" />
+      <workItem from="1587368141469" duration="22356000" />
+      <workItem from="1587692168763" duration="225000" />
+      <workItem from="1589943646934" duration="5889000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117912000" />
+    <option name="totallyTimeSpent" value="124180000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17857143" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1119403" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -215,7 +243,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="11" weight="0.32936078" />
-      <window_info anchor="bottom" id="Terminal" order="12" weight="0.7529794" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.34669557" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -349,22 +377,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tmall.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-75" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tmall.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1208">
-          <caret line="848" lean-forward="true" selection-start-line="848" selection-end-line="848" />
-          <folding>
-            <element signature="n#style#0;n#tbcc#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#tbcc#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/tmall.txt" />
+    <entry file="file://$PROJECT_DIR$/tmall.html" />
     <entry file="file://D:/SoftWare/Python36/Lib/site-packages/lxml/html/clean.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
@@ -397,22 +411,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tmall.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1675">
+          <caret line="150" column="23" selection-start-line="150" selection-start-column="16" selection-end-line="150" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/2and3/time.pyi">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/taobao.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="502">
+          <caret line="89" column="73" selection-start-line="89" selection-start-column="73" selection-end-line="89" selection-end-column="73" />
           <folding>
-            <element signature="e#83#92#0" expanded="true" />
+            <element signature="e#105#114#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tmall.py">
+    <entry file="file://$PROJECT_DIR$/data/TmallComments.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="295">
+          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/SoftWare/Python36/Lib/site-packages/xlwt/Workbook.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="709" selection-start-line="709" selection-end-line="709" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/query_comments.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="76" column="22" selection-start-line="76" selection-start-column="22" selection-end-line="76" selection-end-column="22" />
           <folding>
-            <element signature="e#83#92#0" expanded="true" />
+            <element signature="e#9#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
